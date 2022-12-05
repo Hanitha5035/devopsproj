@@ -6,7 +6,7 @@
      apt: 
        name: "{{mywebpackonubuntu}}"
        state: present
-     when: ansible_os_family =="Debian"
+     when: ansible_os_family =="Debian""
 
   -  name: start webserver on Ubuntu
      service: 
@@ -14,13 +14,13 @@
        state: started
      when: ansible_os_family =="Debian"
 
-  -  name: install httpd on RedHat
+  -  name: install webserver on RedHat
      yum: 
        name: "{{mywebpackonredhat}}"
        state: present
      when: ansible_os_family =="RedHat"
 
-  -  name: start httpd on RedHat
+  -  name: start webserver on RedHat
      service: 
        name: "{{mywebpackonredhat}}"
        state: started
