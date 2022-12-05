@@ -1,15 +1,13 @@
 --
-
 [mywebservers]
 172.31.9.186
 172.31.9.160
-[appservers]
-0.0.0.0
-0.0.0.0
-[DB severs]
-0.0.0.0
-0.0.0.0
+
 [mywebservers:vars]
 mywebpackonubuntu=apache2
 mywebpackonredhat=httpd
+
+
+
+
 
