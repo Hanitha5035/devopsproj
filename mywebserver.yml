@@ -14,7 +14,7 @@
        state: started
      when: ansible_os_family =="Debian"
 
-  -  name: i want to install webserver on REDHAT
+  -  name: i want to install httpd on REDHAT
      apt: 
        name: httpd
        state: present
