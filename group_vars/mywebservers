@@ -1,5 +1,5 @@
 
 ---
 
-mywebpackuonbuntu=apache2
-mywebpackonredhat=httpd
+mywebpackuonbuntu:apache2
+mywebpackonredhat:httpd
