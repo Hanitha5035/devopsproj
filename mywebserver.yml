@@ -6,14 +6,14 @@
      apt: 
        name: apache2
        state: present
-     when: ansible_OS_family=="Debian"
+     when: ansible_OS_family =="Debian"
 
   -  name: i want to Start webserver on ubuntu
      service: 
        name: apache2
        state: started
-     when: ansible_OS_family=="Debian"
-            
+     when: ansible_OS_family =="Debian"
+
       
        
 
