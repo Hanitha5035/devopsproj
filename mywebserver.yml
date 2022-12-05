@@ -2,13 +2,13 @@
 - hosts: mywebservers
   become: yes
   tasks: 
-  -  name: install webserver on ubuntu
+  -  name: install webserver on Ubuntu
      apt: 
        name: "{{mywebpackonubuntu}}"
        state: present
      when: ansible_os_family =="Debian"
 
-  -  name: start webserver on ubuntu
+  -  name: start webserver on Ubuntu
      service: 
        name: "{{mywebpackonubuntu}}"
        state: started
