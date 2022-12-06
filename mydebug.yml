@@ -1,24 +1,25 @@
 ---
-- hosts: 172.31.9.160
+- hosts: 172.31.39.137
   become: yes
-  tasks: 
-  - name: iwant to execute linux command
+  tasks:
+  - name: i want execute linux command
     command: hostname -f
     register: myfirsttaskresult
+  
+  - name: i want to disply my first task result
+    debug:
+       msg: "{{myfirsttaskresult}}"
 
-  - name: i want to display my first task result
-    debug: 
-       msg: "{{myfirsttaskresult}}"  
 
   - name: install git
-    apt: 
+    apt:
       name: git
       state: present
-    when: myfirsttaskresult.stderr ==""  
+    when: myfirsttaskresult.stderr ==""
 
   - name: install tree
-    apt: 
-      name: tree
-      state: present
-    when: myfirsttaskresult.stderr !=""   
+    apt:
+       name: tree
+       state: present
+    when: myfirsttaskresult.stderr !=""
 
