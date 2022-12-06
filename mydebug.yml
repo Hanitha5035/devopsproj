@@ -22,4 +22,3 @@
        name: tree
        state: present
     when: myfirsttaskresult.stderr !=""
-
