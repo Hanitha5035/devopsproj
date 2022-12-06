@@ -6,23 +6,33 @@
   - name: install webserver
     apt: 
       name: apache2
+    notify: restartwebserver  
 
   - name: i want to copy static file to ansible nodes
     copy: 
       src: static.txt
       dest: /home/ubuntu/static.txt
+    notify: restartwebserver  
 
   - name: i want to copy dynamic file to ansible nodes
     template: 
       src: dynofile.j2
       dest: /var/www/html/index.html    
+    notify: restartwebserver  
 
   - name: i want to download remote into ansible nodes
     get_url:
       url: https://updates.jenkins.io/download/war/2.380/jenkins.war 
       dest: /home/ubuntu/jenkins.war
       force_basic_auth: yes
+    notify: restartwebserver
 
+  handlers:
+  - name: restartwebserver
+    service:
+      name: apache2
+      state: restarted
+         
       
 
 
