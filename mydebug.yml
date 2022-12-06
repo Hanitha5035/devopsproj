@@ -1,7 +1,6 @@
 ---
-- hosts: mywebservers
+- hosts: 172.31.9.186
   become: yes
   tasks: 
   - name: iwant to execute linux command
     command: hostname -f
-    
