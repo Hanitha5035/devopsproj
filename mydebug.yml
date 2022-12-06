@@ -1,5 +1,5 @@
 ---
-- hosts: 172.31.9.186
+- hosts: 172.31.9.160
   become: yes
   tasks:
   - name: i want execute linux command
@@ -12,7 +12,7 @@
 
 
   - name: install git
-    apt:
+    yum:
       name: git
       state: present
     when: myfirsttaskresult.stderr ==""
