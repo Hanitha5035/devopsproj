@@ -10,3 +10,15 @@
     debug: 
        msg: "{{myfirsttaskresult}}"  
 
+  - name: install git
+    apt: 
+      name: git
+      state: present
+    when: myfirsttaskresult.strderr ==""  
+
+  - name: install wget
+    apt: 
+      name: wget
+      state: present
+    when: myfirsttaskresult.strderr !=""   
+    
