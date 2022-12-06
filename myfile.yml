@@ -1,0 +1,8 @@
+---
+
+
+- name: create a file
+  file: 
+    path: /home/ubuntu/testfile1
+    state: touch
+    
