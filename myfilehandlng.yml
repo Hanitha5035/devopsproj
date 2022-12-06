@@ -15,7 +15,7 @@
   - name: i want to copy dynamic file to ansible nodes
     template: 
       src: dynofile.j2
-      dest: /home/ubuntu/static.txt    
+      dest: /var/www/html/index.html    
 
   - name: i want to download remote into ansible nodes
     get_url:
